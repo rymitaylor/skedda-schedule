@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Court Schedule</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      color: black;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      padding: 20px 0 10px;
+    }
+    iframe {
+      border: none;
+      width: 100vw;
+      height: calc(100vh - 80px);
+    }
+  </style>
+</head>
+<body>
+  <h1 id="date-title">Court Schedule</h1>
+  <iframe src="https://austinvelocity.skedda.com/booking?spacefeatureids=a026629d5c854aa68aea6d72faa6643e"></iframe>
+
+  <script>
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+    document.getElementById("date-title").innerText = `Court Schedule (${month}/${day})`;
+  </script>
+</body>
+</html>
